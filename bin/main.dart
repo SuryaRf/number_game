@@ -28,7 +28,8 @@ int _readInt(String prompt) {
     stdout.write(prompt);
     final s = stdin.readLineSync();
     final v = int.tryParse((s ?? '').trim());
-    if (v != null) return v;
-    print('Input tidak valid. Masukkan bilangan bulat.');
+    if (v != null && v >= 1 && v <= 100) return v;
+    print('Masukkan bilangan 1..100.');
   }
 }
+
